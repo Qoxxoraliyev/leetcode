@@ -24,7 +24,7 @@ public class MajorityElement {
         return maxKey;
     }
 
-    public static void main(String[] args) {cc
+    public static void main(String[] args) {
 
         int[] nums={3,3,4};
         System.out.println(majorityElement(nums));
