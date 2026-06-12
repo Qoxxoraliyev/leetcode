@@ -1,7 +1,11 @@
 public class FirstBadVersion {
 
 
-    public static int Ve
+    static class VersionControl{
+
+
+
+    }
 
     public static void main(String[] args) {
 
