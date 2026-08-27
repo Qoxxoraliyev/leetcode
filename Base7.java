@@ -4,17 +4,26 @@ public class Base7 {
 
 
         StringBuilder sb=new StringBuilder();
-        while (num!=0){
-            sb.append(num%7);
-            num/=7;
+        if (num<0){
+            num*=-1;
+            while (num!=0){
+                sb.append(num%7);
+                num/=7;
+            }
+            sb.append("-");
         }
-
-        return sb.toString();
+       else {
+            while (num!=0){
+                sb.append(num%7);
+                num/=7;
+            }
+        }
+        return sb.reverse().toString();
     }
 
 
     public static void main(String[] args) {
-        System.out.println(convertToBase7(100));
+        System.out.println(convertToBase7(0));
     }
 
 }
