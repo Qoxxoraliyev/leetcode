@@ -12,25 +12,29 @@ public class BinaryTreeTilt {
 
     }
 
+
+
     static int answer=0;
 
     public static int findTilt(TreeNode root){
-        int leftSum=0;
-        int rightSum=0;
+        sum(root);
+        return answer;
+    }
 
-        if (root==null){
+
+    public static int sum(TreeNode root){
+        int sumLeft=0;
+        int sumRight=0;
+        if (root==null) {
             return 0;
         }
         else {
-
-            leftSum=findTilt(root.left);
-            rightSum=findTilt(root.right);
-            int tilt=Math.abs(leftSum-rightSum);
+            sumLeft=sum(root.left);
+            sumRight=sum(root.right);
+            int tilt=Math.abs(sumLeft-sumRight);
             answer+=tilt;
         }
-
-
-        return root.val+leftSum+rightSum;
+        return root.val+sumLeft+sumRight;
     }
 
     public static void main(String[] args) {
@@ -38,8 +42,7 @@ public class BinaryTreeTilt {
         TreeNode root=new TreeNode(1);
         root.left=new TreeNode(2);
         root.right=new TreeNode(3);
-        findTilt(root);
-        System.out.println(answer);
+        System.out.println(findTilt(root));
 
 
     }
